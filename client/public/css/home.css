@@ -1,0 +1,107 @@
+body{
+  background-color: #F7F7F7;
+}
+
+.jumbotron {
+  height: 500px !important;
+  background-image: url(https://www.htmls.ru/upload/iblock/10d/task-scheduling.png) !important;
+  background-repeat: no-repeat;
+  margin:0;
+  padding: 0;
+}
+
+.display-3 {
+  text-align: right !important;
+  color: #0976a1;
+  padding-top: 150px;
+  padding-right: 25px;
+}
+
+.lead{
+  text-align: right !important;
+  padding-right: 25px;
+}
+
+.container-2{
+  background-color: #0976a1;
+  height:540px;
+}
+
+.card {
+  width: 450px;
+  margin-top: 25px;
+  margin-left: 75px;
+}
+.first-sec-text{
+  color:#ffffff;
+  margin-top: 45px;
+  margin-left: 20px;
+}
+
+h3 {
+   color: #0976a1;
+   text-align: center;
+}
+.container-3{
+  background-color: #eff0f0;
+  height:350px;
+}
+#card-body-image{
+  background-image: url(http://www.salesbabu.com/wp-content/uploads/2014/07/Task-Mgmt-softwre.png);
+  background-repeat: no-repeat;
+  margin-left: 50px;
+  margin top: 35px;
+}
+
+#card-2{
+  width: 550px;
+  height: 225px;
+}
+
+h2 {
+  text-align: center;
+  padding-top: 25px;
+  color: #0976a1;
+}
+
+#benefits-header-text{
+  color:#F7F7F7;
+}
+
+.bullet-point {
+  margin-left: 50px;
+  margin-top: 37px;
+}
+.card-2{
+  margin-top: 50px;
+}
+
+#contact {
+  margin-right: 30px;
+  color: #ffffff;
+}
+
+.social {
+  width:40px;
+  height:40px;
+  margin-top: 15px;
+}
+
+li {
+  list-style: none;
+  display: inline;
+}
+
+.footer{
+  background-color: #8b8c8c;
+  height:60px;
+}
+.contact{
+  margin-left: 925px;
+  vertical-align: middle;
+  color: #FFFFFF;
+}
+.container-4 {
+  background-color: #0976a1;
+  height:500px;
+}
