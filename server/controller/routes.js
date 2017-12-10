@@ -23,13 +23,10 @@ router.get('/', function (req,res){
 
 router.get('/login', function (req, res){
 	res.sendFile(path.join(__dirname,'../../client/public/html/login.html'));
-<<<<<<< HEAD
 });
-=======
-})
+
 
 router.post('/api/sign-up', (req,res) => {
-	console.log(req.body)
 	var query = "INSERT INTO users (name, username, password, email) VALUES ($1,$2,$3,$4)";
 	pgClient.query(query, [req.body.name, req.body.username, req.body.password, req.body.email], (error,queryRes) => {
 		if(error){
@@ -39,6 +36,5 @@ router.post('/api/sign-up', (req,res) => {
 		}
 	});
 })
->>>>>>> akin
 
 module.exports = router;
