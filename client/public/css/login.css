@@ -1,0 +1,38 @@
+body{
+  background-color: #F7F7F7;
+}
+
+.jumbotron {
+  height: 500px !important;
+  background-image: url(https://www.htmls.ru/upload/iblock/10d/task-scheduling.png) !important;
+  background-repeat: no-repeat;
+  margin:0;
+  padding: 0;
+}
+
+.display-3 {
+  text-align: right !important;
+  color: #0976a1;
+  padding-top: 150px;
+  padding-right: 25px;
+}
+
+.lead{
+  text-align: right !important;
+  padding-right: 25px;
+}
+
+.card {
+  width: 450px;
+  margin-top: 35px;
+  margin-left: 75px;
+}
+
+.container-fluid{
+  background-color: #0976a1;
+  height:400px;
+  width: 100%;
+}
+.col-sm-8{
+  margin-left: 170px;
+}
