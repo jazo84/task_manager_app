@@ -1,4 +1,4 @@
-var express = require('express');
+/*var express = require('express');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
@@ -12,7 +12,6 @@ var flash = require('connect-flash');
 var routes = require('./controller/routes.js');
 
 var app = express();
-
 
 app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -63,4 +62,25 @@ var PORT = process.env.PORT || 8000;
 
 app.listen(PORT, function(){
 	console.log("Listening on PORT " + PORT);
+});*/
+
+var express = require('express');
+var bodyParser = require('body-parser');
+
+var routes = require('./controller/routes.js');
+
+var app = express();
+
+app.use(bodyParser.json({limit:'50mb'}));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.text());
+app.use(bodyParser.json({ type: 'application/vnd.api+json'}));
+
+app.use('/', routes);
+app.use(express.static('./client'));
+
+var PORT = process.env.PORT || 8000;
+
+app.listen(PORT, function(){
+	console.log("Listening on PORT" +" "+ PORT);
 });
