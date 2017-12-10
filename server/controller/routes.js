@@ -25,4 +25,19 @@ router.get('/login', function (req, res){
 	res.sendfile(path.join(__dirname,'../../client/public/html/login.html'));
 })
 
+router.post('api/login', function (req,res){
+    var query = `SELECT * FROM users WHERE username='${req.body.username}'`;
+    pgClient.query(query, (error, loginRes)=>{
+        if(req.body.password === loginRes.rows[0].password){
+            if(error){
+                res.json({error:error})
+            } else {
+                res.json({results:loginRes.rows})
+            }
+        }else {
+            res.json({error:"Incorrect Password"})
+        }
+    });
+});
+
 module.exports = router;
