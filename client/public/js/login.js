@@ -1,11 +1,11 @@
-$(document).ready(function)() {
+$(document).ready(function() {
 
-	$('#log-in-form').on('submit', function(e)){
+	$('#log-in-form').on('submit', function(e){
 		e.preventDefault();
 
 		var logInObj = {
-			username: $('#exampleInputUsername').val(),
-			password: $('#exampleInputPassword1').val()
+			username: $('#username_input').val(),
+			password: $('#password_input').val()
 		}
 
 		$.ajax({
@@ -15,15 +15,17 @@ $(document).ready(function)() {
 			data: JSON.stringify(logInObj),
 			contentType: 'application/json'
 		}).then(function(res){
+			console.log(res)
 			if(res.error === "Incorrect Password"){
 				alert("Incorrect Password")
 			} else {
-				//window.location.href = '/api/sign/' 
-				console.log(username);
+				alert("Success")
+				window.location.href = '/justdoittasks/profile/' + res.results[0].id
 			}
 		});
 
-		$('#exampleInputUsername').val("");
-		$('#exampleInputPassword1').val("");
+		$('#username_input').val(""),
+		$('#password_input').val("")
 	});
+
 });
