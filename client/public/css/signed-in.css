@@ -1,0 +1,26 @@
+nav {
+  background-color:#F7F7F7;
+}
+.card {
+  background-color: #FFFFFF;
+  width:1193px;
+  margin: auto;
+  opacity: .966;
+}
+
+body{
+  background-color: #0976a1;
+  background-image: url(https://www.htmls.ru/upload/iblock/10d/task-scheduling.png);
+  background-repeat: no-repeat;
+  background-position:bottom;
+}
+
+h1{
+  color:#F7F7F7;
+  margin-left: 25px;
+  margin-top: 25px;
+}
+
+hr{
+  margin-top: 0;
+}
