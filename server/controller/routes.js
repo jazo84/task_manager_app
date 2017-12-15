@@ -58,7 +58,7 @@ router.post('/api/login', (req,res)=>{
 });
 
 router.get('/justdoittasks/profile/:id', (req,res) =>{
-	var query = `SELECT users.name,tasks.start_date, tasks.end_date, tasks.priority, tasks.task_name, tasks.task_description, tasks.assigned_to, tasks.username FROM tasks INNER JOIN users ON tasks.user_id=users.id WHERE users.id=${req.params.id}`;
+	var query = `SELECT users.name,tasks.start_date, tasks.end_date, tasks.priority, tasks.task_name, tasks.task_description, tasks.assigned_to, tasks.username FROM tasks INNER JOIN users ON tasks.username=users.username WHERE users.id=${req.params.id}`;
 	pgClient.query(query, (error, userRes)=>{
 		console.log(userRes)
 		if (error) {
