@@ -4,7 +4,7 @@ module.exports = (obj) => {
 	str += "<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css'  crossorigin='anonymous'></head>";
 	str += "<link rel='stylesheet' type='text/css' href='../../../public/css/signed-in.css'/>"
 	str += "<nav><ul class='nav justify-content-end'><li class='nav-item'><a class='nav-link active'href='#'>Sign Out</a></li></ul></nav>";
-	str += '<body><h1>Welcome,' +" "+obj.name+ '</h1><br>';
+	str += '<body><h1>Welcome,' +" "+ obj.name+ '</h1><br>';
 	str += "<div class='card'><h3>Task List</h2><div class='row'><div class='card-body col-sm-2'>Task Name</div><div class='card-body col-sm-2'>Task Description</div><div class='card-body col-sm-2'>Start Date</div><div class='card-body col-sm-2'>End Date</div><div class='card-body col-sm-2'>Assigned By:</div><div class='card-body col-sm-1'>Priority:</div></div><hr>"
 	str += "<div class='row'><div class='card-body col-sm-2'>"+obj.task_name +"</div><div class='card-body col-sm-2'>"+ obj.task_description+"</div><div class='card-body col-sm-2'>"+obj.start_date+"</div><div class='card-body col-sm-2'>"+obj.end_date+"</div><div class='card-body col-sm-2'>"+obj.assigned_to+"</div><div class='card-body col-sm-1'>"+obj.priority+"</div></div></div><br>"
 	str += "<div class='row'><div class='col-sm-10'></div><div class='col-sm-2'><button type='button'class='btn btn-success data-toggle='modal' data-target='#exampleModal'>Add Task</button></div></div><br>"
