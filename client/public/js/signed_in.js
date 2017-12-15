@@ -28,3 +28,5 @@ $(document).ready(function(){
 	function appendAddTaskList(){
 		$('all-div').remove();
 	}
+
+	
