@@ -26,7 +26,7 @@ router.get('/login', function (req, res){
 });
 
 router.post('/api/sign_up',(req,res) => {
-	console.log(req.body);
+	//console.log(req.body);
 	if(req.body.name !== "" && req.body.username !== "" && req.body.password !== "" && req.body.email !=="") {
 		var query = "INSERT INTO users (name, username, password, email) VALUES ($1, $2, $3, $4)";
 		pgClient.query(query, [req.body.name, req.body.username, req.body.password, req.body.email], (error, signUpRes)  => {
@@ -42,7 +42,7 @@ router.post('/api/sign_up',(req,res) => {
 });
 
 router.post('/api/login', (req,res)=>{
-	console.log(req.body)
+	//console.log(req.body)
     var query = `SELECT * FROM users WHERE username='${req.body.username}'`;
     pgClient.query(query, (error, loginRes)=>{
 				if(req.body.password === loginRes.rows[0].password){
@@ -57,14 +57,14 @@ router.post('/api/login', (req,res)=>{
     });
 });
 
-router.post('/api/profile/:id', (req, res) =>{
+router.post('/api/task', (req, res) =>{
 	if(req.body.task_name !== '' && req.body.task_description !== '')
 		var query = "INSERT INTO tasks (task_name, task_description, start_date, end_date, assigned_to, priority) VALUES ($1, $2, $3, $4, $5, $6)";
-	pgClient.query(query, [req.body.task_name, req.body.task_description, req.body.start_date, req.body.end_date, req.body.assigned_to, req.body.priority] (error, taskres) =>{
+	pgClient.query(query, [req.body.task_name, req.body.task_description, req.body.start_date, req.body.end_date, req.body.assigned_to, req.body.priority], (error, taskres) =>{
 		if (error) {
 			res.json({error:error})
 		} else {
-			res.json({results:taskres})
+			res.json({results:taskres.rows})
 		}
 	});
 });
@@ -73,7 +73,7 @@ router.post('/api/profile/:id', (req, res) =>{
 router.get('/justdoittasks/profile/:id', (req,res) =>{
 	var query = `SELECT users.name,tasks.start_date, tasks.end_date, tasks.priority, tasks.task_name, tasks.task_description, tasks.assigned_to, tasks.username FROM tasks INNER JOIN users ON tasks.username=users.username WHERE users.id=${req.params.id}`;
 	pgClient.query(query, (error, userRes)=>{
-		console.log(userRes)
+		//console.log(userRes)
 		if (error) {
 			res.json({error:error})
 		} else {
