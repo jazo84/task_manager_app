@@ -25,7 +25,7 @@ $(document).ready(function(){
 
 	$(document).on('click', '#addTaskButton', function(){
 		//$('#modal-input-div').remove();
-		//var taskId = $(this).data('id');
+		var taskId = $(this).data('id');
 		$('#create-task-modal').modal();
 
 		//var inputDiv = $('div id="modal-input-div" >');

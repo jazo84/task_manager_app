@@ -70,4 +70,17 @@ router.get('/justdoittasks/profile/:id', (req,res) =>{
 	});
 });
 
+router.post('/api/task', (req, res) =>{
+	if(req.body.task_name !== '' && req.body.task_description !== '')
+		var query = "INSERT INTO tasks (task_name, task_description, start_date, end_date, assigned_to, priority) VALUES ($1, $2, $3, $4, $5, $6)";
+	pgClient.query(query, [req.body.task_name, req.body.task_description, req.body.start_date, req.body.end_date, req.body.assigned_to, req.body.priority], (error, taskres) =>{
+		console.log(req.body)
+		if (error) {
+			res.json({error:error})
+		} else {
+			res.json({results:taskres.rows})
+		}
+	});
+});
+
 module.exports = router;
