@@ -14,19 +14,6 @@ $(document).ready(function(){
 			priority: $('#priority').val(),
 			assigned_to: $('#assigned-to').val()
 		}
-<<<<<<< HEAD
-		console.log(signedInObj);
-		console.log(JSON.stringify(signedInObj));
-
-		appendAddTaskList();
-	
-		$('name-input').val(),
-		$('description-input').val(),
-		$('start-input').val(),
-		$('end-input').val(),
-		$('priority-input').val(),
-		$('assigned-input').val()
-=======
 
 			$.ajax({
 				method:'POST',
@@ -55,20 +42,14 @@ $(document).ready(function(){
 		$('#end-date').val(),
 		$('#priority').val(),
 		$('#assigned-to').val()
->>>>>>> 0f58ecb9f68a7595990d2dbf1be145cf880d6d9e
+		// console.log(signedInObj);
 	});
 
 	$(document).on('click', '#addTaskButton', function(){
 		//$('#modal-input-div').remove();
 		$('#create-task-modal').modal();
 		//var inputDiv = $('div id="modal-input-div" >');
-<<<<<<< HEAD
 
-		
-
-	})
-});
-=======
 	});
 });
->>>>>>> 0f58ecb9f68a7595990d2dbf1be145cf880d6d9e
+
