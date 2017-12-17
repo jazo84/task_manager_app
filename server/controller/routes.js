@@ -58,13 +58,14 @@ router.post('/api/login', (req,res)=>{
 });
 
 router.get('/justdoittasks/profile/:id', (req,res) =>{
-	var query = `SELECT users.id, users.name, tasks.start_date, tasks.end_date, tasks.priority, tasks.task_name, tasks.task_description, tasks.assigned_to, tasks.user_id FROM tasks INNER JOIN users ON tasks.user_id=users.id WHERE tasks.user_id=${req.params.id}`;
+	var query = `SELECT users.id, users.name, tasks.id, tasks.start_date, tasks.end_date, tasks.priority, tasks.task_name, tasks.task_description, tasks.assigned_to, tasks.user_id FROM tasks INNER JOIN users ON tasks.user_id=users.id WHERE tasks.user_id=${req.params.id}`;
 	pgClient.query(query, (error, userRes)=>{
 		if (error) {
 			res.json({error:error})
 		} else {
+			console.log(userRes.rows)
 			res.set('Content-Type', 'text/html');
-			res.send(signed_in_html(userRes.rows[0]));
+			res.send(signed_in_html(userRes.rows));
 		}
 	});
 });

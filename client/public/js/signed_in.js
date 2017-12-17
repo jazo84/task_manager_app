@@ -27,15 +27,9 @@ $(document).ready(function(){
 					alert("All Fields must be entered to submit a task")
 				} else {
 					$('#create-task-modal').modal('toggle');
-					//console.log(signedInObj);
-					//alert("Your Task Has Been Submitted Successfully");
 				};
 			});
-			//$('#submit_task').submit();
-			 //});
-		//console.log(signedInObj);
-		//console.log(JSON.stringify(signedInObj));
-		//appendAddTaskList();
+
 		$('#task_name').val(),
 		$('#task-description').val(),
 		$('#start-date').val(),
@@ -44,9 +38,9 @@ $(document).ready(function(){
 		$('#assigned-to').val()
 	});
 
+
+
 	$(document).on('click', '#addTaskButton', function(){
-		//$('#modal-input-div').remove();
 		$('#create-task-modal').modal();
-		//var inputDiv = $('div id="modal-input-div" >');
 	});
 });
