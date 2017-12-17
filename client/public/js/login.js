@@ -19,9 +19,8 @@ $(document).ready(function() {
 			if(res.error === "Incorrect Password"){
 				alert("Incorrect Password")
 			} else {
-				alert("Success")
-				window.location.href = '/justdoit/tasks/:'+ res.results[0].username
-				//window.location.href = '/justdoittasks/profile/' + res.results[0].id
+				alert("Success");
+				window.location.href = '/justdoittasks/profile/'+ res.results[0].id
 			}
 		});
 

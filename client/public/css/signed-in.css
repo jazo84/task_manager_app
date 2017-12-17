@@ -24,3 +24,7 @@ h1{
 hr{
   margin-top: 0;
 }
+
+.modal-backdrop {
+   background-color: transparent;
+}
